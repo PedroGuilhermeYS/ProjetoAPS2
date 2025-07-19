@@ -11,7 +11,12 @@ public class Produto {
         this.peso = peso;
     }
 
-    public String getNome() { return nome; }
-    public double getPreco() { return preco; }
-    public double getPeso() { return peso; }
+    public String getNome() { 
+        return nome; }
+
+    public double getPreco() { 
+        return preco; }
+
+    public double getPeso() { 
+        return peso; }
 }
