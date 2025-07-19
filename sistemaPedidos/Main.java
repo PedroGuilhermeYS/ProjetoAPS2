@@ -43,17 +43,17 @@ public class Main {
                     Cliente cliente = sistema.getClientes().get(sc.nextInt());
 
                     List<ItemPedido> itens = new ArrayList<>();
-                    while (true) {
-                        System.out.println("Produtos:");
-                        for (int i = 0; i < sistema.getProdutos().size(); i++)
-                            System.out.println(i + " - " + sistema.getProdutos().get(i).getNome());
-                        System.out.print("Escolha produto (-1 p/ sair): ");
-                        int escolha = sc.nextInt();
-                        if (escolha == -1) break;
-                        System.out.print("Quantidade: ");
-                        int qtd = sc.nextInt();
-                        itens.add(new ItemPedido(sistema.getProdutos().get(escolha), qtd));
-                    }
+            
+                    System.out.println("Produtos:");
+                    for (int i = 0; i < sistema.getProdutos().size(); i++)
+                        System.out.println(i + " - " + sistema.getProdutos().get(i).getNome());
+                    System.out.print("Escolha produto (-1 p/ sair): ");
+                    int escolha = sc.nextInt();
+                    if (escolha == -1) break;
+                    System.out.print("Quantidade: ");
+                    int qtd = sc.nextInt();
+                    itens.add(new ItemPedido(sistema.getProdutos().get(escolha), qtd));
+                    
 
                     System.out.println("1 - Frete por peso | 2 - Frete por distância");
                     FreteStrategy frete = sc.nextInt() == 1 ? new FreteCalculadoraPeso() : new FreteCalculadoraDistancia();
