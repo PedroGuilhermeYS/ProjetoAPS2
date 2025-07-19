@@ -47,7 +47,7 @@ public class Main {
                     System.out.println("Produtos:");
                     for (int i = 0; i < sistema.getProdutos().size(); i++)
                         System.out.println(i + " - " + sistema.getProdutos().get(i).getNome());
-                    System.out.print("Escolha produto (-1 p/ sair): ");
+                    System.out.print("Escolha produto: ");
                     int escolha = sc.nextInt();
                     if (escolha == -1) break;
                     System.out.print("Quantidade: ");

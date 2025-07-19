@@ -16,15 +16,22 @@ public class Pedido {
     }
 
     public Cliente getCliente() { return cliente; }
-    public List<ItemPedido> getItens() { return itens; }
+    public List<ItemPedido> getItens() { 
+        return itens; }
+
     public double getTotalProdutos() {
         return itens.stream().mapToDouble(ItemPedido::getSubtotal).sum();
     }
+
     public double getPesoTotal() {
         return itens.stream().mapToDouble(ItemPedido::getPesoTotal).sum();
     }
-    public double getFrete() { return frete; }
-    public double getTotalComFrete() { return getTotalProdutos() + frete; }
+
+    public double getFrete() { 
+        return frete; }
+
+    public double getTotalComFrete() { 
+        return getTotalProdutos() + frete; }
 
     public void setNotificador(Notificacao notificador) {
         this.notificador = notificador;

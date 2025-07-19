@@ -16,11 +16,21 @@ public class Sistema {
         return instancia;
     }
 
-    public List<Cliente> getClientes() { return clientes; }
-    public List<Produto> getProdutos() { return produtos; }
-    public List<Pedido> getPedidos() { return pedidos; }
+    public List<Cliente> getClientes() { 
+        return clientes; }
+        
+    public List<Produto> getProdutos() { 
+        return produtos; }
 
-    public void adicionarCliente(Cliente c) { clientes.add(c); }
-    public void adicionarProduto(Produto p) { produtos.add(p); }
-    public void adicionarPedido(Pedido p) { pedidos.add(p); }
+    public List<Pedido> getPedidos() { 
+        return pedidos; }
+
+    public void adicionarCliente(Cliente c) { 
+        clientes.add(c); }
+
+    public void adicionarProduto(Produto p) { 
+        produtos.add(p); }
+
+    public void adicionarPedido(Pedido p) { 
+        pedidos.add(p); }
 }
