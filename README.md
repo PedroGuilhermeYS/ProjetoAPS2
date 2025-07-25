@@ -16,12 +16,14 @@ Construir um sistema de pedidos que:
 
 🧱 Estrutura do Projeto
 
+```text
 src/
-├── modelo/             # Entidades como Cliente, Produto, Pedido
+├── modelo/             # Entidades como Cliente, Produto e Pedido
 ├── relatorio/          # Geração de relatórios (Template Method)
-├── servico/            # Estratégias de Frete e Notificadores
-├── sistema/            # Classe Singleton Sistema
-└── principal/          # Classe Main (ponto de entrada)
+├── servico/            # Estratégias de frete e notificadores
+├── sistema/            # Classe Singleton do sistema
+└── principal/          # Classe Main (ponto de entrada do sistema)
+```
 
 ---
 
