@@ -5,7 +5,7 @@
 
 ---
 
-##🎯 Objetivo
+🎯 Objetivo
 
 Construir um sistema de pedidos que:
 -Calcule o frete com base em diferentes estratégias (peso, distância);
@@ -14,7 +14,7 @@ Construir um sistema de pedidos que:
 
 ---
 
-##🧱 Estrutura do Projeto
+🧱 Estrutura do Projeto
 
 src/
 ├── modelo/             # Entidades como Cliente, Produto, Pedido
@@ -25,7 +25,7 @@ src/
 
 ---
 
-##💡 Padrões de Projeto Utilizados
+💡 Padrões de Projeto Utilizados
 
 1. ✅ Strategy
 Usado em: frete.FreteStrategy, FretePorPeso, FretePorDistanciaObjetivo 
@@ -91,7 +91,7 @@ Desvantagens:
 
 ---
 
-##**🔌 Interfaces Criadas**
+**🔌 Interfaces Criadas**
 
 -**✔️ FreteStrategy**
 -Representa estratégias de cálculo de frete.
@@ -108,7 +108,7 @@ Desvantagens:
 
 ---
 
-##▶️ Como Executar
+▶️ Como Executar
 
 >Clone o repositório:
 >```bash
@@ -117,7 +117,7 @@ Desvantagens:
 >```
 
 Compile e execute:
-# Se estiver usando Maven
+-Se estiver usando Maven
 mvn compile
 mvn exec:java -Dexec.mainClass="principal.Main"
 
