@@ -96,15 +96,15 @@ Dificulta testes unitários.
 
 ## 🔌 Interfaces Criadas
 
-**✔️ FreteStrategy**
+**✔️ FreteStrategy:**
 Representa estratégias de cálculo de frete.
 A classe Pedido usa essa interface e chama o método calcular().
 
-**✔️ Notificador**
+**✔️ Notificador:**
 Define diferentes formas de notificar um cliente (SMS, Email, WhatsApp).
 O Pedido chama notificador.notificar(cliente) sem saber o tipo.
 
-## 🚫 Padrões não utilizados**
+## 🚫 Padrões não utilizados
 - **Builder:** Desnecessário, pois Pedido não tem atributos complexos.
 - **Decorator/Adapter/Proxy:** Não se aplicam ao escopo simples.
 - **Command:** Não havia necessidade de encapsular ações como objetos.
