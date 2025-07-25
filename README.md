@@ -30,22 +30,25 @@ src/
 
 ## 💡 Padrões de Projeto Utilizados
 
-1. ✅ Strategy
+## 1. ✅ Strategy
 Usado em: frete.FreteStrategy, FretePorPeso, FretePorDistanciaObjetivo 
 
 Objetivo: 
+
 -**Permitir trocar a lógica de cálculo do frete de forma flexível.**
 
 Vantagens:
+
 -**Evita if/switch no código de Pedido.**
 -**Permite adicionar novas estratégias sem alterar código existente.**
 
 Desvantagens:
+
 -**Aumenta o número de classes.**
 
 ---
 
-2. ✅ Factory Method
+## 2. ✅ Factory Method
 Usado em: factory.NotificadorFactory
 
 Objetivo: 
@@ -60,7 +63,7 @@ Desvantagens:
 
 ---
 
-3. ✅ Observer (forma simplificada)
+## 3. ✅ Observer (forma simplificada)
 Usado em: Pedido -> notificador.notificar(cliente)
 
 Objetivo: 
@@ -68,7 +71,7 @@ Objetivo:
 
 ---
 
-4. ✅ Template Method
+## 4. ✅ Template Method
 Usado em: relatorio.RelatorioTemplate, RelatorioTexto, RelatorioJson
 
 Objetivo:
@@ -80,7 +83,7 @@ Vantagens:
 
 ---
 
-5. ✅ Singleton
+## 5. ✅ Singleton
 Usado em: sistema.Sistema
 
 Objetivo: 
