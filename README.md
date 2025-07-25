@@ -119,10 +119,12 @@ O Pedido chama notificador.notificar(cliente) sem saber o tipo.
 >cd ProjetoAPS2
 >```
 
-Compile e execute:
--Se estiver usando Maven
-mvn compile
-mvn exec:java -Dexec.mainClass="principal.Main"
+>Compile e execute:
+>```bash
+>-Se estiver usando Maven
+>mvn compile
+>mvn exec:java -Dexec.mainClass="principal.Main"
+>```
 
 ---
 
