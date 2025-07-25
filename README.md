@@ -121,7 +121,7 @@ O Pedido chama notificador.notificar(cliente) sem saber o tipo.
 
 >Compile e execute:
 >```bash
->-Se estiver usando Maven
+>Se estiver usando Maven
 >mvn compile
 >mvn exec:java -Dexec.mainClass="principal.Main"
 >```
