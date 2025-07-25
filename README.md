@@ -1,117 +1,134 @@
-📦 Sistema de Pedidos
-📜 Descrição
-Este projeto foi desenvolvido como parte da disciplina de Análise e Projeto de Sistemas, com o objetivo de aplicar conceitos de Programação Orientada a Objetos (POO) e padrões de projeto.
+# 📦 Sistemas de Pedidos
+
+## 📜 Descrição
+Este projeto foi desenvolvido como parte da disciplina de Análise e Projeto de Sistemas com o objetivo de aplicar conceitos de POO e padrões de projeto.
+
+---
 
 🎯 Objetivo
-Construir um sistema de pedidos com as seguintes funcionalidades:
 
-📦 Calcular o frete com base em diferentes estratégias (peso ou distância);
+Construir um sistema de pedidos que:
+-Calcule o frete com base em diferentes estratégias (peso, distância);
+-Gere relatórios em múltiplos formatos (texto e JSON);
+-Notifique o cliente por diferentes meios (SMS, e-mail, WhatsApp).
 
-📄 Gerar relatórios em múltiplos formatos (texto e JSON);
-
-📲 Notificar o cliente por diferentes meios (SMS, e-mail ou WhatsApp).
+---
 
 🧱 Estrutura do Projeto
-bash
-Copiar
-Editar
+
 src/
-├── modelo/             # Entidades como Cliente, Produto e Pedido
+├── modelo/             # Entidades como Cliente, Produto, Pedido
 ├── relatorio/          # Geração de relatórios (Template Method)
-├── servico/            # Estratégias de frete e notificadores
-├── sistema/            # Classe Singleton do sistema
-└── principal/          # Classe Main (ponto de entrada do sistema)
+├── servico/            # Estratégias de Frete e Notificadores
+├── sistema/            # Classe Singleton Sistema
+└── principal/          # Classe Main (ponto de entrada)
+
+---
+
 💡 Padrões de Projeto Utilizados
+
 1. ✅ Strategy
-Usado em: FreteStrategy, FretePorPeso, FretePorDistancia
-Objetivo: Permitir trocar a lógica de cálculo de frete de forma flexível.
+Usado em: frete.FreteStrategy, FretePorPeso, FretePorDistanciaObjetivo 
+
+Objetivo: 
+-Permitir trocar a lógica de cálculo do frete de forma flexível.
 
 Vantagens:
-
-Evita o uso de if ou switch no código do pedido.
-
-Permite adicionar novas estratégias sem alterar código existente.
+-Evita if/switch no código de Pedido.
+-Permite adicionar novas estratégias sem alterar código existente.
 
 Desvantagens:
+-Aumenta o número de classes.
 
-Pode aumentar o número de classes.
+---
 
 2. ✅ Factory Method
-Usado em: NotificadorFactory
-Objetivo: Criar instâncias de notificadores com base em uma string identificadora ("email", "sms", "whatsapp").
+Usado em: factory.NotificadorFactory
+
+Objetivo: 
+-Criar instâncias de notificadores com base em uma string ("email", "sms", "whatsapp").
 
 Vantagens:
-
-Centraliza e simplifica a criação de objetos.
-
-Facilita a manutenção e extensão.
+-Centraliza e simplifica a criação de objetos.
+-Facilita manutenção e extensão.
 
 Desvantagens:
+-Não lida bem com validações complexas.
 
-Pode ser limitado para casos com validações mais complexas.
+---
 
 3. ✅ Observer (forma simplificada)
 Usado em: Pedido -> notificador.notificar(cliente)
-Objetivo: Desacoplar o processo de notificação do pedido.
 
-Observação: Uso manual do padrão, sem addObserver() ou notifyObservers().
+Objetivo: 
+-Desacoplar a notificação do pedido.Nota: Uso manual do Observer (sem addObserver() ou notifyObservers()).
+
+---
 
 4. ✅ Template Method
-Usado em: RelatorioTemplate, RelatorioTexto, RelatorioJson
-Objetivo: Reutilizar a estrutura de geração de relatórios.
+Usado em: relatorio.RelatorioTemplate, RelatorioTexto, RelatorioJson
+
+Objetivo:
+-Reutilizar a estrutura de geração de relatórios.
 
 Vantagens:
+-Reutilização de cabeçalho, corpo e rodapé.
+-Fácil extensão para novos formatos.
 
-Reaproveitamento de cabeçalho, corpo e rodapé.
-
-Fácil extensão para novos formatos.
+---
 
 5. ✅ Singleton
-Usado em: Sistema
-Objetivo: Garantir que exista apenas uma instância do sistema.
+Usado em: sistema.Sistema
+
+Objetivo: 
+-Garantir que só exista uma instância do sistema.
 
 Vantagens:
-
-Centraliza o estado global (clientes, pedidos, produtos, etc).
+-Centraliza estado global (clientes, pedidos etc.).
 
 Desvantagens:
+-Dificulta testes unitários.
 
-Pode dificultar testes unitários.
+---
 
-🔌 Interfaces Criadas
-✔️ FreteStrategy
-Define as estratégias de cálculo de frete.
-A classe Pedido usa essa interface ao chamar o método calcular().
+**🔌 Interfaces Criadas**
 
-✔️ Notificador
-Define diferentes formas de notificação (SMS, E-mail, WhatsApp).
-O Pedido chama notificador.notificar(cliente) sem saber o tipo.
+**✔️ FreteStrategy**
+-Representa estratégias de cálculo de frete.
+-A classe Pedido usa essa interface e chama o método calcular().
 
-🚫 Padrões Não Utilizados
-Builder: Desnecessário, pois Pedido não possui atributos complexos.
+**✔️ Notificador**
+-Define diferentes formas de notificar um cliente (SMS, Email, WhatsApp).
+-O Pedido chama notificador.notificar(cliente) sem saber o tipo.
 
-Decorator / Adapter / Proxy: Fora do escopo simples do projeto.
+🚫 Padrões não utilizados**
+-Builder: Desnecessário, pois Pedido não tem atributos complexos.
+-Decorator/Adapter/Proxy: Não se aplicam ao escopo simples.
+-Command: Não havia necessidade de encapsular ações como objetos.
 
-Command: Não havia necessidade de encapsular ações como objetos.
+---
 
 ▶️ Como Executar
-Clone o repositório:
 
-bash
-Copiar
-Editar
-git clone https://github.com/PedroGuilhermeYS/ProjetoAPS2.git
-cd ProjetoAPS2
-Usando Maven:
-bash
-Copiar
-Editar
+>Clone o repositório:
+>```bash
+>git clone https://github.com/PedroGuilhermeYS/ProjetoAPS2.git
+>cd ProjetoAPS2
+>```
+
+Compile e execute:
+-Se estiver usando Maven
 mvn compile
 mvn exec:java -Dexec.mainClass="principal.Main"
-👥 Autores
-Pedro Guilherme
 
-Carolaine Silva
+---
+
+👥 Autores
+- **Pedro Guilherme**
+- **Carolaine Silva**
+
+---
 
 📝 Licença
 Este projeto foi desenvolvido apenas para fins educacionais.
+
