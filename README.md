@@ -33,84 +33,81 @@ src/
 ## 1. ✅ Strategy
 Usado em: frete.FreteStrategy, FretePorPeso, FretePorDistanciaObjetivo 
 
-Objetivo: 
+**Objetivo:** 
+Permitir trocar a lógica de cálculo do frete de forma flexível.
 
--**Permitir trocar a lógica de cálculo do frete de forma flexível.**
+**Vantagens:**
+Evita if/switch no código de Pedido.
+Permite adicionar novas estratégias sem alterar código existente.
 
-Vantagens:
-
--**Evita if/switch no código de Pedido.**
--**Permite adicionar novas estratégias sem alterar código existente.**
-
-Desvantagens:
-
--**Aumenta o número de classes.**
+**Desvantagens:**
+Aumenta o número de classes.
 
 ---
 
 ## 2. ✅ Factory Method
 Usado em: factory.NotificadorFactory
 
-Objetivo: 
--**Criar instâncias de notificadores com base em uma string ("email", "sms", "whatsapp").**
+**Objetivo:** 
+Criar instâncias de notificadores com base em uma string ("email", "sms", "whatsapp")
 
-Vantagens:
--**Centraliza e simplifica a criação de objetos.**
--**Facilita manutenção e extensão.**
+**Vantagens:**
+Centraliza e simplifica a criação de objetos
+Facilita manutenção e extensão.
 
-Desvantagens:
--**Não lida bem com validações complexas.**
+**Desvantagens:**
+Não lida bem com validações complexas.
 
 ---
 
 ## 3. ✅ Observer (forma simplificada)
 Usado em: Pedido -> notificador.notificar(cliente)
 
-Objetivo: 
--**Desacoplar a notificação do pedido.Nota: Uso manual do Observer (sem addObserver() ou notifyObservers()).**
+**Objetivo:** 
+Desacoplar a notificação do pedido.Nota: Uso manual do Observer (sem addObserver() ou notifyObservers())
 
 ---
 
 ## 4. ✅ Template Method
 Usado em: relatorio.RelatorioTemplate, RelatorioTexto, RelatorioJson
 
-Objetivo:
--**Reutilizar a estrutura de geração de relatórios.**
+**Objetivo:**
+Reutilizar a estrutura de geração de relatórios.
 
-Vantagens:
--**Reutilização de cabeçalho, corpo e rodapé.**
--**Fácil extensão para novos formatos.**
+**Vantagens:**
+Reutilização de cabeçalho, corpo e rodapé.
+Fácil extensão para novos formatos.
 
 ---
 
 ## 5. ✅ Singleton
 Usado em: sistema.Sistema
 
-Objetivo: 
--**Garantir que só exista uma instância do sistema.**
+**Objetivo:** 
+Garantir que só exista uma instância do sistema.
 
-Vantagens:
--**Centraliza estado global (clientes, pedidos etc.).**
+**Vantagens:**
+Centraliza estado global (clientes, pedidos etc.).
 
-Desvantagens:
--**Dificulta testes unitários.**
+**Desvantagens:**
+Dificulta testes unitários.
 
 ---
 
 ## 🔌 Interfaces Criadas
 
 **✔️ FreteStrategy**
--**Representa estratégias de cálculo de frete.**
--**A classe Pedido usa essa interface e chama o método calcular().**
+Representa estratégias de cálculo de frete.
+A classe Pedido usa essa interface e chama o método calcular().
 
 **✔️ Notificador**
--**Define diferentes formas de notificar um cliente (SMS, Email, WhatsApp).**
--**O Pedido chama notificador.notificar(cliente) sem saber o tipo.**
+Define diferentes formas de notificar um cliente (SMS, Email, WhatsApp).
+O Pedido chama notificador.notificar(cliente) sem saber o tipo.
 
 ## 🚫 Padrões não utilizados**
--**Builder:** Desnecessário, pois Pedido não tem atributos complexos.
--**Decorator/Adapter/Proxy:** Não se aplicam ao escopo simples.
--**Command:** Não havia necessidade de encapsular ações como objetos.
+- **Builder:** Desnecessário, pois Pedido não tem atributos complexos.
+- **Decorator/Adapter/Proxy:** Não se aplicam ao escopo simples.
+- **Command:** Não havia necessidade de encapsular ações como objetos.
 
 ---
 
