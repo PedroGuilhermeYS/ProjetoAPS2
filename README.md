@@ -1,7 +1,7 @@
 # 📦 Sistemas de Pedidos
 
 ## 📜 Descrição
--Este projeto foi desenvolvido como parte da disciplina de Análise e Projeto de Sistemas com o objetivo de aplicar conceitos de POO e padrões de projeto.
+Este projeto foi desenvolvido como parte da disciplina de Análise e Projeto de Sistemas com o objetivo de aplicar conceitos de POO e padrões de projeto.
 
 ---
 
@@ -93,15 +93,15 @@ Desvantagens:
 
 **🔌 Interfaces Criadas**
 
--**✔️ FreteStrategy**
+**✔️ FreteStrategy**
 -Representa estratégias de cálculo de frete.
 -A classe Pedido usa essa interface e chama o método calcular().
 
--**✔️ Notificador**
+**✔️ Notificador**
 -Define diferentes formas de notificar um cliente (SMS, Email, WhatsApp).
 -O Pedido chama notificador.notificar(cliente) sem saber o tipo.
 
-##**🚫 Padrões não utilizados**
+🚫 Padrões não utilizados**
 -Builder: Desnecessário, pois Pedido não tem atributos complexos.
 -Decorator/Adapter/Proxy: Não se aplicam ao escopo simples.
 -Command: Não havia necessidade de encapsular ações como objetos.
@@ -124,8 +124,8 @@ mvn exec:java -Dexec.mainClass="principal.Main"
 ---
 
 👥 Autores
--**Pedro Guilherme**
--**Carolaine Silva**
+- **Pedro Guilherme**
+- **Carolaine Silva**
 
 ---
 
